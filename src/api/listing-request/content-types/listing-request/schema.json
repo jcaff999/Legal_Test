@@ -1,0 +1,94 @@
+{
+  "kind": "collectionType",
+  "collectionName": "listing_requests",
+  "info": {
+    "name": "ListingRequest",
+    "singularName": "listing-request",
+    "pluralName": "listing-requests",
+    "displayName": "ListingRequest",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "listingType": {
+      "type": "enumeration",
+      "enum": [
+        "Vendor",
+        "Consultant",
+        "ALSP"
+      ]
+    },
+    "vendorReq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "request.vendor-req"
+    },
+    "consultantReq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "request.listing-req"
+    },
+    "alspReq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "request.listing-req"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Initial",
+        "Assigned",
+        "Review",
+        "Completed"
+      ]
+    },
+    "enhancedVendorReq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "request.enhanced-vendor-req"
+    },
+    "enhancedConsultantReq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "request.enhanced-list-req"
+    },
+    "enhancedAlspReq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "request.enhanced-list-req"
+    },
+    "assignee": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "admin::user"
+    },
+    "basicOrEnhanced": {
+      "type": "enumeration",
+      "enum": [
+        "Basic",
+        "Enhanced"
+      ]
+    },
+    "createOrUpdate": {
+      "type": "enumeration",
+      "enum": [
+        "Create",
+        "Update"
+      ]
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "submittedName": {
+      "type": "string"
+    },
+    "submittedEmail": {
+      "type": "email"
+    }
+  }
+}

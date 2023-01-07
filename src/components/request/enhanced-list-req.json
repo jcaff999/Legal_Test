@@ -1,0 +1,69 @@
+{
+  "collectionName": "components_request_enhanced_list_reqs",
+  "info": {
+    "name": "EnhancedListReq",
+    "icon": "bezier-curve"
+  },
+  "options": {},
+  "attributes": {
+    "callToActionUrl": {
+      "type": "string"
+    },
+    "callToActionText": {
+      "type": "string"
+    },
+    "serviceBreakdown": {
+      "type": "text"
+    },
+    "engagementLen": {
+      "type": "integer"
+    },
+    "valueProposition": {
+      "type": "text"
+    },
+    "dedicatedResources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "con-props.dedicated-resource"
+    },
+    "technology": {
+      "type": "string"
+    },
+    "founders": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-props.team-member"
+    },
+    "specialists": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-props.team-member"
+    },
+    "competitor": {
+      "type": "richtext"
+    },
+    "productVideos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "vendor-props.video"
+    },
+    "screenShots": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.picture"
+    },
+    "pricingData": {
+      "type": "richtext"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.testimonial"
+    },
+    "vendorResources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "vendor-props.po-c"
+    }
+  }
+}

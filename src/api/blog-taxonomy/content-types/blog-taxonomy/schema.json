@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bl",
+  "info": {
+    "singularName": "blog-taxonomy",
+    "pluralName": "blog-taxonomys",
+    "displayName": "Blog Taxonomy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    },
+    "contents": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::content.content",
+      "inversedBy": "blogTaxonomies"
+    }
+  }
+}

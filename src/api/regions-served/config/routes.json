@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/regions-serveds",
+      "handler": "regions-served.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/regions-serveds/count",
+      "handler": "regions-served.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/regions-serveds/:id",
+      "handler": "regions-served.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/regions-serveds",
+      "handler": "regions-served.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/regions-serveds/:id",
+      "handler": "regions-served.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/regions-serveds/:id",
+      "handler": "regions-served.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

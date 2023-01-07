@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_vendor_props_consolidations",
+  "info": {
+    "name": "Consolidation",
+    "icon": "business-time"
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "amount": {
+      "type": "integer"
+    },
+    "article": {
+      "type": "string"
+    },
+    "articleLink": {
+      "type": "string"
+    },
+    "enableInActiveDir": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/existing-customers",
+      "handler": "existing-customer.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/existing-customers/count",
+      "handler": "existing-customer.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/existing-customers/:id",
+      "handler": "existing-customer.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/existing-customers",
+      "handler": "existing-customer.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/existing-customers/:id",
+      "handler": "existing-customer.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/existing-customers/:id",
+      "handler": "existing-customer.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

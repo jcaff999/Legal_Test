@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_vendor_props_enhancedlistings",
+  "info": {
+    "name": "Enhancedlisting",
+    "icon": "grip-horizontal",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "callToAction": {
+      "type": "component",
+      "repeatable": false,
+      "component": "global.call-to-action"
+    },
+    "videos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "vendor-props.video"
+    },
+    "screenShots": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.picture"
+    },
+    "pricingData": {
+      "type": "richtext"
+    },
+    "vendorResources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "vendor-props.po-c"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.testimonial"
+    }
+  }
+}

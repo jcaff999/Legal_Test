@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_vendor_props_po_cs",
+  "info": {
+    "name": "VendorResource",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "richtext"
+    },
+    "link": {
+      "type": "string"
+    },
+    "publishedDate": {
+      "type": "date"
+    },
+    "author": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Whitepaper",
+        "Article",
+        "CaseStudy",
+        "PressRelease"
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_vendor_props_pricing_resources",
+  "info": {
+    "name": "PricingResource",
+    "icon": "file-invoice-dollar"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

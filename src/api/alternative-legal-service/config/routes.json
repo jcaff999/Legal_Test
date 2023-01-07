@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/alternative-legal-services",
+      "handler": "alternative-legal-service.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/alternative-legal-services/count",
+      "handler": "alternative-legal-service.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/alternative-legal-services/:id",
+      "handler": "alternative-legal-service.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/alternative-legal-services",
+      "handler": "alternative-legal-service.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/alternative-legal-services/:id",
+      "handler": "alternative-legal-service.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/alternative-legal-services/:id",
+      "handler": "alternative-legal-service.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

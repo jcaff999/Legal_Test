@@ -1,0 +1,64 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sub_topics",
+  "info": {
+    "name": "SubTopic",
+    "singularName": "sub-topic",
+    "pluralName": "sub-topics",
+    "displayName": "Sub Topic",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "topics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::topic.topic",
+      "inversedBy": "subTopics"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "index": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "vendors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vendor.vendor",
+      "mappedBy": "subTopics"
+    },
+    "featuredOnHome": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPremium": {
+      "type": "boolean"
+    },
+    "expert": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::expert.expert",
+      "inversedBy": "expertiseSubTopics"
+    },
+    "contents": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::content.content",
+      "inversedBy": "subTopics"
+    }
+  }
+}

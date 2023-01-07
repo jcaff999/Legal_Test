@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "topics",
+  "info": {
+    "name": "Topic",
+    "singularName": "topic",
+    "pluralName": "topics",
+    "displayName": "Topic"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "index": true
+    },
+    "iconName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "featuredOnHome": {
+      "type": "boolean",
+      "default": false
+    },
+    "vendors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vendor.vendor",
+      "mappedBy": "topics"
+    },
+    "subTopics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-topic.sub-topic",
+      "mappedBy": "topics"
+    },
+    "isPremium": {
+      "type": "boolean"
+    },
+    "expert": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::expert.expert",
+      "inversedBy": "expertiseTopics"
+    },
+    "contents": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::content.content",
+      "inversedBy": "topics"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "experts",
+  "info": {
+    "singularName": "expert",
+    "pluralName": "experts",
+    "displayName": "Expert",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "default": "LTH Expert"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "linkedin": {
+      "type": "string"
+    },
+    "twitter": {
+      "type": "string"
+    },
+    "contactEmail": {
+      "type": "email",
+      "private": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "index": true
+    },
+    "experience": {
+      "type": "richtext"
+    },
+    "contents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::content.content",
+      "mappedBy": "expert"
+    },
+    "expertiseSubTopics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::sub-topic.sub-topic",
+      "mappedBy": "expert"
+    },
+    "expertiseTopics": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::topic.topic",
+      "mappedBy": "expert"
+    }
+  }
+}

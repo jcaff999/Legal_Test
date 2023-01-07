@@ -1,0 +1,165 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contents",
+  "info": {
+    "singularName": "content",
+    "pluralName": "contents",
+    "displayName": "Content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "index": true
+    },
+    "csvContent": {
+      "type": "text"
+    },
+    "snippet": {
+      "type": "string"
+    },
+    "publishedTime": {
+      "type": "datetime"
+    },
+    "hasDownloadMaterial": {
+      "type": "boolean"
+    },
+    "isPremium": {
+      "type": "boolean"
+    },
+    "phase": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::phase.phase",
+      "inversedBy": "contents"
+    },
+    "isTrending": {
+      "type": "boolean"
+    },
+    "isMaintained": {
+      "type": "boolean"
+    },
+    "authorVendor": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::vendor.vendor",
+      "inversedBy": "authoredContents"
+    },
+    "resourceVendors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vendor.vendor",
+      "inversedBy": "contents"
+    },
+    "author": {
+      "type": "string"
+    },
+    "isAuthorVendor": {
+      "type": "boolean"
+    },
+    "subjectMatters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::subject-matter.subject-matter",
+      "mappedBy": "contents"
+    },
+    "themes": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::theme.theme",
+      "mappedBy": "contents"
+    },
+    "documentType": {
+      "type": "enumeration",
+      "enum": [
+        "Article",
+        "Case Study",
+        "White Paper",
+        "Press Release",
+        "Practical Guidance"
+      ]
+    },
+    "blogTaxonomies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::blog-taxonomy.blog-taxonomy",
+      "mappedBy": "contents"
+    },
+    "includeInKnowHow": {
+      "type": "boolean"
+    },
+    "expert": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::expert.expert",
+      "inversedBy": "contents"
+    },
+    "contentType": {
+      "type": "enumeration",
+      "enum": [
+        "Landscape Article",
+        "Evaluation Framework",
+        "Requirements Template",
+        "Business Case",
+        "Competitive Analysis",
+        "Buyers' Guide",
+        "Pilot Guide",
+        "Thought Leadership",
+        "KnowHow",
+        "Legaltech Resources for Lawyers",
+        "Blog",
+        "Vendor Resource"
+      ]
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "defaultImage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "downloadMaterial": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "subTopics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-topic.sub-topic",
+      "inversedBy": "contents"
+    },
+    "topics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::topic.topic",
+      "inversedBy": "contents"
+    },
+    "audiences": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::demographic.demographic"
+    }
+  }
+}

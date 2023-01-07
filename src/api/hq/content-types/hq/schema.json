@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hqs",
+  "info": {
+    "name": "HQ",
+    "singularName": "hq",
+    "pluralName": "hqs",
+    "displayName": "HQ"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

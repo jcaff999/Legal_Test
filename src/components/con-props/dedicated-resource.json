@@ -1,0 +1,20 @@
+{
+    "collectionName": "components_consultant_props_dedicated_resources",
+    "info": {
+      "name": "DedicatedResource",
+      "icon": "atlas"
+    },
+    "options": {},
+    "attributes": {
+      "count": {
+        "type": "integer"
+      },
+      "type": {
+        "type": "enumeration",
+        "enum": [
+          "FullTime",
+          "PartTime"
+        ]
+      }
+    }
+  }

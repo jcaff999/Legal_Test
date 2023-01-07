@@ -1,0 +1,280 @@
+{
+  "settings": {
+    "max_ngram_diff": 8,
+    "analysis": {
+      "filter": {
+        "english_stop": {
+          "type":       "stop",
+          "stopwords":  "_english_" 
+        },
+        "synonym": {
+          "type": "synonym",
+          "lenient": true,
+          "synonyms" : [
+            "artificial intelligence => ai",
+            "contract automation => document automation",
+            "expert systems => decision tree",
+            "litigation analytics => judicial analytics",
+            "contract analysis => contract review",
+            "dms => document management",
+            "cms => content management",
+            "proofreading => drafting tools",
+            "proof reading => drafting tools",
+            "minute book => entity management",
+            "minute books => entity management",
+            "workforce allocation => work allocation",
+            "rm => information and records governance",
+            "record management => information and records governance",
+            "records management => information and records governance",
+            "information governance => information and records governance",
+            "ig => information and records governance",
+            "comfort letter => circle-up",
+
+            "M&A => Mergers & Acquisitions, Mergers and Acquisitions",
+            "DEI => Diversity & Inclusion, Diversity and Inclusion, Diversity, Equity & inclusion, Diversity equity and inclusion",
+            "Document Automation => Contract Automation",
+            "Judicial Analytics => Litigation Analytics",
+            "Data Analytics => Business Intelligence",
+            "ALSP => Alternative Legal Services, Law Company, Law Companies",
+            "CLM => Contract Lifecycle Management, End-to-End CLM",
+            "Contract Review => Data Extraction",
+            "CRM => Client Relationship Management",
+            "IAM => IDAM, Identity Access Management",
+            "Infogov => Information governance",
+            "KYC => Know Your Client",
+            "NBI => New Business Intake, Business Intake, Client Intake",
+            "Risk Management => Security, Information Security, Infosec",
+            "AI => Artificial Intelligence",
+            "ML => Machine Learning",
+            "KM => Knowledge Management",
+            "DM => DMS, Document Management, Document Management System",
+            "IP => Intellectual Property",
+            "TM => Trademark, Trade Mark",
+            "ADR => Alternative Dispute Resolution", 
+            "BOA => Book of Authorities",
+            "Case Management => End-to-End Case Management",
+            "Transaction Management => End-to-End Transaction Management",
+            "RPA => Robotic Process Automation",
+            "VDR => Virtual Data Room",
+            "Bankruptcy => Bankruptcy and Restructuring, Restructuring, Reorganizations, Reorg",
+            "PI => Personal Injury",
+            "Estates => Estate Law, Wills and Probate"
+          ]
+        }
+      },
+      "tokenizer": {
+        "full": {
+          "type": "ngram",
+          "min_gram": 2,
+          "max_gram": 10,
+          "token_chars": ["letter", "digit"]
+        },
+        "taxonomy": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 10,
+          "token_chars": ["letter", "digit"]
+        },
+        "search": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 10,
+          "token_chars": ["letter", "digit"]
+        }
+      },
+      "analyzer": {
+        "full": {
+          "tokenizer": "full",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "english_stop",
+            "synonym"
+          ],
+          "char_filter": [
+            "html_strip"
+          ]
+        },
+        "full_search": {
+          "tokenizer": "search",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "english_stop",
+            "synonym"
+          ],
+          "char_filter": [
+            "html_strip"
+          ]
+        },
+        "taxonomy": {
+          "tokenizer": "taxonomy",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "english_stop",
+            "synonym"
+          ],
+          "char_filter": [
+            "html_strip"
+          ]
+        },
+        "taxonomy_search": {
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "english_stop",
+            "synonym"
+          ],
+          "char_filter": [
+            "html_strip"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "name": {
+        "type": "text",
+        "analyzer": "full",
+        "search_analyzer": "full_search",
+        "fields": {
+          "raw": {
+            "type": "keyword"
+          }
+        }
+      },
+      "tool": {
+        "type": "text",
+        "analyzer": "full",
+        "search_analyzer": "full_search",
+        "fields": {
+          "raw": {
+            "type": "keyword"
+          }
+        }
+      },
+      "description": {
+        "type": "text",
+        "analyzer": "full",
+        "search_analyzer": "full_search"
+      },
+      "type": {
+        "type": "text"
+      },
+      "featured": {
+        "type": "text"
+      },
+      "enhancedListingEnabled": {
+        "type": "boolean"
+      },
+      "hq": {
+        "type": "text",
+        "analyzer": "taxonomy",
+        "search_analyzer": "taxonomy_search",
+        "fields": {
+          "raw": { "type": "keyword" },
+          "space": { "type": "text", "analyzer": "whitespace" }
+        }
+      },
+      "office": {
+        "type": "text",
+        "analyzer": "taxonomy",
+        "search_analyzer": "taxonomy_search",
+        "fields": {
+          "raw": { "type": "keyword" },
+          "space": { "type": "text", "analyzer": "whitespace" }
+        }
+      },
+      "topic": {
+        "type": "text",
+        "analyzer": "taxonomy",
+        "search_analyzer": "taxonomy_search",
+        "fields": {
+          "raw": { "type": "keyword" },
+          "space": { "type": "text", "analyzer": "whitespace" }
+        }
+      },
+      "subTopic": {
+        "type": "text"
+      },
+      "practiceArea": {
+        "type": "text",
+        "analyzer": "taxonomy",
+        "search_analyzer": "taxonomy_search",
+        "fields": {
+          "raw": { "type": "keyword" },
+          "space": { "type": "text", "analyzer": "whitespace" }
+        }
+      },
+      "language": {
+        "type": "text",
+        "analyzer": "taxonomy",
+        "search_analyzer": "taxonomy_search",
+        "fields": {
+          "raw": { "type": "keyword" },
+          "space": { "type": "text", "analyzer": "whitespace" }
+        }
+      },
+      "audience": {
+        "type": "text",
+        "analyzer": "taxonomy",
+        "search_analyzer": "taxonomy_search",
+        "fields": {
+          "raw": { "type": "keyword" },
+          "space": { "type": "text", "analyzer": "whitespace" }
+        }
+      },
+      "deployment": {
+        "type": "text",
+        "analyzer": "taxonomy",
+        "search_analyzer": "taxonomy_search",
+        "fields": {
+          "raw": { "type": "keyword" },
+          "space": { "type": "text", "analyzer": "whitespace" }
+        }
+      },
+      "integration": {
+        "type": "text",
+        "analyzer": "taxonomy",
+        "search_analyzer": "taxonomy_search",
+        "fields": {
+          "raw": { "type": "keyword" },
+          "space": { "type": "text", "analyzer": "whitespace" }
+        }
+      },
+      "existingCustomer": {
+        "type": "text",
+        "analyzer": "taxonomy",
+        "search_analyzer": "taxonomy_search",
+        "fields": {
+          "raw": { "type": "keyword" },
+          "space": { "type": "text", "analyzer": "whitespace" }
+        }
+      },
+      "feature": {
+        "type": "text",
+        "analyzer": "taxonomy",
+        "search_analyzer": "taxonomy_search",
+        "fields": {
+          "raw": { "type": "keyword" },
+          "space": { "type": "text", "analyzer": "whitespace" }
+        }
+      },
+      "regionServed": {
+        "type": "text",
+        "analyzer": "taxonomy",
+        "search_analyzer": "taxonomy_search",
+        "fields": {
+          "raw": { "type": "keyword" },
+          "space": { "type": "text", "analyzer": "whitespace" }
+        }
+      },
+      "isPremium": {
+        "type": "boolean"
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_global_success_stories",
+  "info": {
+    "name": "SuccessStory",
+    "icon": "book-open"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "platform_languages",
+  "info": {
+    "name": "Language",
+    "singularName": "platform-language",
+    "pluralName": "platform-languages",
+    "displayName": "Language"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

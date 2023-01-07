@@ -1,0 +1,117 @@
+{
+  "collectionName": "components_request_vendor_reqs",
+  "info": {
+    "name": "VendorReq",
+    "icon": "cart-plus",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "companyName": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "ceoName": {
+      "type": "string"
+    },
+    "ceoEmail": {
+      "type": "email"
+    },
+    "marketName": {
+      "type": "string"
+    },
+    "marketEmail": {
+      "type": "email"
+    },
+    "website": {
+      "type": "string"
+    },
+    "hqs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hq.hq"
+    },
+    "offices": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::office.office"
+    },
+    "productName": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "longDescription": {
+      "type": "richtext"
+    },
+    "audiences": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::demographic.demographic"
+    },
+    "subTopics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-topic.sub-topic"
+    },
+    "languages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::platform-language.platform-language"
+    },
+    "deployments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::installation.installation"
+    },
+    "practiceAreas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::practice-area.practice-area"
+    },
+    "integrations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::integration.integration"
+    },
+    "isCreate": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "existingCustomers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::existing-customer.existing-customer"
+    },
+    "typeOfUsers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-of-user.type-of-user"
+    },
+    "competitor": {
+      "type": "richtext"
+    },
+    "yearFounded": {
+      "type": "integer"
+    },
+    "isOpenJobPosition": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

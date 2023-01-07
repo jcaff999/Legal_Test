@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_about_props_team_members",
+  "info": {
+    "name": "Member",
+    "icon": "address-card",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    }
+  }
+}

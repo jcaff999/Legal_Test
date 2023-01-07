@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "Event",
+    "singularName": "event",
+    "pluralName": "events",
+    "displayName": "Event"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "organizer": {
+      "type": "string",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "website": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "notes": {
+      "type": "richtext"
+    },
+    "country": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string"
+    },
+    "date": {
+      "type": "date"
+    },
+    "featured": {
+      "type": "boolean"
+    },
+    "features": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event-feature.event-feature"
+    },
+    "recurrenceId": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::recurrence.recurrence"
+    },
+    "durationId": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::duration.duration"
+    },
+    "formatId": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event-format.event-format"
+    },
+    "audiences": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::audience.audience"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "index": true
+    }
+  }
+}

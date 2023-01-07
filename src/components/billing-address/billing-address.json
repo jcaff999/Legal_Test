@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_billing_address_billing_addresses",
+  "info": {
+    "displayName": "BillingAddress"
+  },
+  "options": {},
+  "attributes": {
+    "addressLine1": {
+      "type": "string",
+      "required": true
+    },
+    "addressLine2": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "zipcode": {
+      "type": "string",
+      "required": true
+    },
+    "state": {
+      "type": "string",
+      "required": true
+    },
+    "country": {
+      "type": "string",
+      "relation": "manyToOne",
+      "target": "api::office.office"
+    }
+  }
+}

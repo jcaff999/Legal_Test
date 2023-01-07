@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_request_enhanced_vendor_reqs",
+  "info": {
+    "name": "EnhancedVendorReq",
+    "icon": "dragon",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "callToActionUrl": {
+      "type": "string"
+    },
+    "callToActionText": {
+      "type": "string"
+    },
+    "productVideos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "vendor-props.video"
+    },
+    "screenShots": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.picture"
+    },
+    "pricingData": {
+      "type": "richtext"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.testimonial"
+    },
+    "vendorResources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "vendor-props.po-c"
+    }
+  }
+}

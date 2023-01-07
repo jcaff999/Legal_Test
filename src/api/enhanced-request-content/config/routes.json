@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/enhanced-request-content",
+      "handler": "enhanced-request-content.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/enhanced-request-content",
+      "handler": "enhanced-request-content.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/enhanced-request-content",
+      "handler": "enhanced-request-content.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

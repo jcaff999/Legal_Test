@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_features",
+  "info": {
+    "name": "EventFeature",
+    "singularName": "event-feature",
+    "pluralName": "event-features",
+    "displayName": "EventFeature"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

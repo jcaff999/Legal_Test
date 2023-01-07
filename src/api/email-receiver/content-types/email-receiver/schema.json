@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "email_receivers",
+  "info": {
+    "singularName": "email-receiver",
+    "pluralName": "email-receivers",
+    "displayName": "EmailReceiver"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "enable": {
+      "type": "boolean"
+    }
+  }
+}

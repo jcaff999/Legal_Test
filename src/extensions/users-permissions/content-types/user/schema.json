@@ -1,0 +1,155 @@
+{
+  "kind": "collectionType",
+  "collectionName": "up_users",
+  "info": {
+    "name": "user",
+    "description": "",
+    "singularName": "user",
+    "pluralName": "users",
+    "displayName": "User"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "timestamps": true
+  },
+  "attributes": {
+    "username": {
+      "type": "string",
+      "minLength": 3,
+      "unique": false,
+      "configurable": false,
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "minLength": 6,
+      "configurable": false,
+      "required": true
+    },
+    "provider": {
+      "type": "string",
+      "configurable": false
+    },
+    "password": {
+      "type": "password",
+      "minLength": 6,
+      "configurable": false,
+      "private": true
+    },
+    "resetPasswordToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmationToken": {
+      "type": "string",
+      "configurable": false,
+      "private": true
+    },
+    "confirmed": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "blocked": {
+      "type": "boolean",
+      "default": false,
+      "configurable": false
+    },
+    "role": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.role",
+      "inversedBy": "users",
+      "configurable": false
+    },
+    "companyType": {
+      "type": "enumeration",
+      "enum": [
+        "Law_firm",
+        "Law_department",
+        "Vendor",
+        "Consultant",
+        "ALSP",
+        "Other"
+      ]
+    },
+    "companySize": {
+      "type": "enumeration",
+      "enum": [
+        "Law_firm_with_more_than_1000_lawyers",
+        "Law_firm_with_250_to_1000_lawyers",
+        "Law_firm_with_100_to_250_lawyers",
+        "Law_firm_with_25_to_100_lawyers",
+        "Law_firm_with_5_to_25_lawyers",
+        "Law_firm_with_less_than_5_lawyers",
+        "Legal_department_with_more_than_100_lawyers",
+        "Legal_department_with_25_to_100_lawyers",
+        "Legal_department_with_5_to_25_lawyers",
+        "Legal_department_with_less_than_5_lawyers",
+        "Legal_Tech_Vendor_in_mature_stage",
+        "Legal_Tech_Vendor_in_early_stage",
+        "Consultant_with_less_than_25_consultants",
+        "Consultant_with_more_than_25_consultants",
+        "ALSP_in_mature_stage",
+        "ALSP_in_early_stage",
+        "Employees_1_to_10",
+        "Employees_11_to_50",
+        "Employees_51_to_200",
+        "Employees_201_to_500",
+        "Employees_501_to_1000",
+        "Employees_more_than_1000"
+      ]
+    },
+    "country": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::office.office"
+    },
+    "jobTitle": {
+      "type": "string"
+    },
+    "companyName": {
+      "type": "string"
+    },
+    "subscribed": {
+      "type": "boolean"
+    },
+    "followingVendors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vendor.vendor",
+      "private": true,
+      "inversedBy": "followedUsers"
+    },
+    "followingAlsps": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::alternative-legal-service.alternative-legal-service",
+      "private": true,
+      "inversedBy": "followedUsers"
+    },
+    "followingConsultants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::consulting.consulting",
+      "private": true,
+      "inversedBy": "followedUsers"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "submittedBy"
+    },
+    "isPremium": {
+      "type": "boolean"
+    },
+    "premiumOrganization": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::premium-organization.premium-organization",
+      "inversedBy": "members"
+    }
+  }
+}

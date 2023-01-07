@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_testimonials_props_authors",
+  "info": {
+    "name": "Author",
+    "icon": "address-book"
+  },
+  "options": {},
+  "attributes": {
+    "avatar": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "name": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    }
+  }
+}

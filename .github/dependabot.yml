@@ -1,0 +1,16 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  # Enable updates for Javascript
+  - package-ecosystem: "npm"
+    # Set root directory for project root
+    directory: "/"
+    schedule:
+      # Set it to daily until we get everything up-to-date
+      interval: "daily"
+      # Run at 7AM UTC
+      time: "07:00"

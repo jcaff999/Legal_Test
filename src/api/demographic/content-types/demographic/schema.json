@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "demographics",
+  "info": {
+    "name": "Audience",
+    "singularName": "demographic",
+    "pluralName": "demographics",
+    "displayName": "Audience",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

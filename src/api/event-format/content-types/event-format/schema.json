@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_formats",
+  "info": {
+    "name": "EventFormat",
+    "singularName": "event-format",
+    "pluralName": "event-formats",
+    "displayName": "EventFormat"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+    "collectionName": "components_global_customers",
+    "info": {
+      "name": "Customer",
+      "icon": "chalkboard-teacher"
+    },
+    "options": {},
+    "attributes": {
+      "name": {
+        "type": "string"
+      },
+      "logo": {
+        "allowedTypes": [
+          "images"
+        ],
+        "type": "media",
+        "multiple": false
+      }
+    }
+  }

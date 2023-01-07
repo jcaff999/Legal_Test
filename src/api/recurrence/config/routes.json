@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/recurrences",
+      "handler": "recurrence.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/recurrences/count",
+      "handler": "recurrence.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/recurrences/:id",
+      "handler": "recurrence.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/recurrences",
+      "handler": "recurrence.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/recurrences/:id",
+      "handler": "recurrence.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/recurrences/:id",
+      "handler": "recurrence.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

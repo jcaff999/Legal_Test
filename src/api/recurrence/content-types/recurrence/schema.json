@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "recurrences",
+  "info": {
+    "name": "Recurrence",
+    "singularName": "recurrence",
+    "pluralName": "recurrences",
+    "displayName": "Recurrence"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

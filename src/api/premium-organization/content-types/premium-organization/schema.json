@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "premium_organizations",
+  "info": {
+    "singularName": "premium-organization",
+    "pluralName": "premium-organizations",
+    "displayName": "PremiumOrganization"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "registrationContact": {
+      "displayName": "Registration Contact",
+      "type": "component",
+      "required": true,
+      "repeatable": false,
+      "component": "registration-contact.registration-contact"
+    },
+    "billingAddress": {
+      "displayName": "Billing Address",
+      "type": "component",
+      "required": true,
+      "repeatable": false,
+      "component": "billing-address.billing-address"
+    },
+    "emailDomain": {
+      "type": "string",
+      "required": true
+    },
+    "paymentOption": {
+      "type": "enumeration",
+      "enum": [
+        "Pay now",
+        "Send me an invoice"
+      ],
+      "default": "Send me an invoice"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Registered (Not Paid)",
+        "Reviewing",
+        "Paid"
+      ],
+      "default": "Registered (Not Paid)",
+      "private": true
+    },
+    "invitations": {
+      "displayName": "Invitations",
+      "type": "component",
+      "repeatable": true,
+      "component": "invitations.invitations"
+    },
+    "pricingPlan": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::premium-pricing-plan.premium-pricing-plan",
+      "inversedBy": "premiumOrganizations"
+    },
+    "members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "premiumOrganization"
+    }
+  }
+}

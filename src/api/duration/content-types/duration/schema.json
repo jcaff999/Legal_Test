@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "durations",
+  "info": {
+    "name": "Duration",
+    "singularName": "duration",
+    "pluralName": "durations",
+    "displayName": "Duration"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "days": {
+      "type": "integer"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "phases",
+  "info": {
+    "singularName": "phase",
+    "pluralName": "phases",
+    "displayName": "Phase",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "contents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::content.content",
+      "mappedBy": "phase"
+    }
+  }
+}

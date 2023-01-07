@@ -1,0 +1,78 @@
+{
+  "collectionName": "components_con_props_con_enhanced_listings",
+  "info": {
+    "name": "ConsultantEnhancedListing",
+    "icon": "ankh",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "callToAction": {
+      "type": "component",
+      "repeatable": false,
+      "component": "global.call-to-action"
+    },
+    "serviceBreakdown": {
+      "type": "text"
+    },
+    "engagementLen": {
+      "type": "integer"
+    },
+    "valueProposition": {
+      "type": "text"
+    },
+    "customers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.customer"
+    },
+    "dedicatedResources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "con-props.dedicated-resource"
+    },
+    "founders": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-props.team-member"
+    },
+    "specialists": {
+      "type": "component",
+      "repeatable": true,
+      "component": "about-props.team-member"
+    },
+    "stories": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.success-story"
+    },
+    "screenshots": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.picture"
+    },
+    "videos": {
+      "type": "component",
+      "repeatable": true,
+      "component": "vendor-props.video"
+    },
+    "pricing": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.pricing-model"
+    },
+    "pricingData": {
+      "type": "richtext"
+    },
+    "vendorResources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "vendor-props.po-c"
+    },
+    "testimonials": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.testimonial"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_vendor_props_videos",
+  "info": {
+    "name": "Video",
+    "icon": "caret-square-right"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "richtext"
+    },
+    "url": {
+      "type": "string"
+    }
+  }
+}

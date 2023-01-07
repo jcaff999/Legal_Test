@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "premium_pricing_plans",
+  "info": {
+    "singularName": "premium-pricing-plan",
+    "pluralName": "premium-pricing-plans",
+    "displayName": "PremiumPricingPlan",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "pricePerYear": {
+      "type": "integer",
+      "required": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "stripeRedirectUrl": {
+      "type": "string",
+      "required": true
+    },
+    "premiumOrganizations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::premium-organization.premium-organization",
+      "mappedBy": "pricingPlan",
+      "private": true
+    }
+  }
+}

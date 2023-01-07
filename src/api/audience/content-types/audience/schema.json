@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "audiences",
+  "info": {
+    "name": "EventAudience",
+    "singularName": "audience",
+    "pluralName": "audiences",
+    "displayName": "EventAudience"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

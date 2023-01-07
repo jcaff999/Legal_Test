@@ -1,0 +1,68 @@
+name: Publish to Uat
+on:
+  push:
+    branches:
+      - uat
+
+env:
+  NODE_VERSION: 16.18.1
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Get Github action IP
+        id: ip
+        uses: haythem/public-ip@v1.3
+
+      - name: Use Node.js ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Restore cache
+        uses: actions/cache@v3
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('package-lock.json') }}
+          restore-keys: ${{ runner.os }}-cache-
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.UAT_LEGALTECH_PEM }}
+          known_hosts: ${{ secrets.UAT_KNOWN_HOSTS }}
+          if_key_exists: fail
+
+      - name: Add Github Actions IP to Security group
+        run: |
+          aws ec2 authorize-security-group-ingress --group-name ${{ secrets.UAT_SG_NAME }} --protocol tcp --port 22 --cidr ${{ steps.ip.outputs.ipv4 }}/32    
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+
+      - name: Deploy
+        run: |
+          ssh ${{ secrets.UAT_SSH_USER }}@${{ secrets.UAT_SERVER_IP }} "cd ${{ secrets.UAT_SOURCE_LOCATION }} && git fetch origin && git reset origin/uat --hard"
+          ssh ${{ secrets.UAT_SSH_USER }}@${{ secrets.UAT_SERVER_IP }} "cd ${{ secrets.UAT_SOURCE_LOCATION }} && npm install"
+          ssh ${{ secrets.UAT_SSH_USER }}@${{ secrets.UAT_SERVER_IP }} "cd ${{ secrets.UAT_SOURCE_LOCATION }} && NODE_OPTIONS=--max_old_space_size=8192 npm run build"
+          ssh ${{ secrets.UAT_SSH_USER }}@${{ secrets.UAT_SERVER_IP }} "cd ${{ secrets.UAT_SOURCE_LOCATION }} && pm2 reload all --update-env"
+
+      - name: Remove Github Actions IP from security group
+        run: |
+          aws ec2 revoke-security-group-ingress --group-name ${{ secrets.UAT_SG_NAME }} --protocol tcp --port 22 --cidr ${{ steps.ip.outputs.ipv4 }}/32
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+        if: always()

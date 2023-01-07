@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonials",
+  "info": {
+    "name": "Testimonials",
+    "singularName": "testimonials",
+    "pluralName": "testimonials-plural",
+    "displayName": "Testimonials"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "richtext"
+    },
+    "author": {
+      "type": "component",
+      "repeatable": false,
+      "component": "testimonials-props.author"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "enhanced-request-contents",
+  "info": {
+    "name": "Enhanced Request Content",
+    "singularName": "enhanced-request-content",
+    "pluralName": "enhanced-request-contents",
+    "displayName": "Enhanced Request Content"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "moreVisibility": {
+      "type": "richtext"
+    },
+    "callToAction": {
+      "type": "richtext"
+    },
+    "screenshots": {
+      "type": "richtext"
+    },
+    "competitor": {
+      "type": "richtext"
+    }
+  }
+}

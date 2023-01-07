@@ -1,0 +1,102 @@
+{
+  "collectionName": "components_request_listing_reqs",
+  "info": {
+    "name": "ListingReq",
+    "icon": "dolly-flatbed",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "serviceName": {
+      "type": "string"
+    },
+    "listingName": {
+      "type": "string"
+    },
+    "userName": {
+      "type": "string"
+    },
+    "userRole": {
+      "type": "string"
+    },
+    "userEmail": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "marketName": {
+      "type": "string"
+    },
+    "marketEmail": {
+      "type": "email"
+    },
+    "ceoName": {
+      "type": "string"
+    },
+    "ceoEmail": {
+      "type": "email"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "longDescription": {
+      "type": "richtext"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "website": {
+      "type": "string"
+    },
+    "hqs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hq.hq"
+    },
+    "offices": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::office.office"
+    },
+    "languages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::platform-language.platform-language"
+    },
+    "regionsServed": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::regions-served.regions-served"
+    },
+    "audiences": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::demographic.demographic"
+    },
+    "serviceOfferings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-topic.sub-topic"
+    },
+    "yearFounded": {
+      "type": "integer"
+    },
+    "partners": {
+      "type": "string"
+    },
+    "size": {
+      "type": "integer"
+    },
+    "isCreate": {
+      "type": "boolean"
+    },
+    "notes": {
+      "type": "richtext"
+    }
+  }
+}

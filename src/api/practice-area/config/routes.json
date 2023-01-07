@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/practice-areas",
+      "handler": "practice-area.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/practice-areas/count",
+      "handler": "practice-area.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/practice-areas/:id",
+      "handler": "practice-area.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/practice-areas",
+      "handler": "practice-area.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/practice-areas/:id",
+      "handler": "practice-area.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/practice-areas/:id",
+      "handler": "practice-area.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

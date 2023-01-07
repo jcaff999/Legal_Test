@@ -1,0 +1,215 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vendors",
+  "info": {
+    "name": "Vendor",
+    "singularName": "vendor",
+    "pluralName": "vendors",
+    "displayName": "Vendor",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "tool": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "default",
+        "consolidation",
+        "graveyard"
+      ]
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "featuredOnHome": {
+      "type": "boolean",
+      "default": false
+    },
+    "enhancedListingEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "audiences": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::demographic.demographic"
+    },
+    "existingCustomers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::existing-customer.existing-customer"
+    },
+    "features": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::feature.feature"
+    },
+    "deployments": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::installation.installation"
+    },
+    "integrations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::integration.integration"
+    },
+    "offices": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::office.office"
+    },
+    "languages": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::platform-language.platform-language"
+    },
+    "practiceAreas": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::practice-area.practice-area"
+    },
+    "hqs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hq.hq"
+    },
+    "consolidationEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "consolidationData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "vendor-props.consolidation"
+    },
+    "graveyardEnabled": {
+      "type": "boolean",
+      "default": false
+    },
+    "graveyardData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "vendor-props.graveyard"
+    },
+    "enhancedListingData": {
+      "type": "component",
+      "repeatable": false,
+      "component": "vendor-props.enhancedlisting"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "index": true
+    },
+    "topics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::topic.topic",
+      "inversedBy": "vendors"
+    },
+    "regionsServed": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::regions-served.regions-served"
+    },
+    "subTopics": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::sub-topic.sub-topic",
+      "inversedBy": "vendors"
+    },
+    "typeOfUser": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::type-of-user.type-of-user"
+    },
+    "similarSolutions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::vendor.vendor"
+    },
+    "longDescription": {
+      "type": "richtext"
+    },
+    "articles": {
+      "type": "component",
+      "repeatable": true,
+      "component": "global.article"
+    },
+    "company": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company.company",
+      "inversedBy": "vendors"
+    },
+    "followedUsers": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "private": true,
+      "mappedBy": "followingVendors"
+    },
+    "reviews": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::review.review",
+      "mappedBy": "vendor"
+    },
+    "rating": {
+      "type": "decimal"
+    },
+    "contactEmail": {
+      "type": "email"
+    },
+    "contactName": {
+      "type": "string"
+    },
+    "isPremium": {
+      "type": "boolean"
+    },
+    "authoredContents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::content.content",
+      "mappedBy": "authorVendor"
+    },
+    "contents": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::content.content",
+      "mappedBy": "resourceVendors"
+    }
+  }
+}

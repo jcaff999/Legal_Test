@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "practice_areas",
+  "info": {
+    "name": "PracticeArea",
+    "singularName": "practice-area",
+    "pluralName": "practice-areas",
+    "displayName": "PracticeArea"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

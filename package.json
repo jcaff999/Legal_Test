@@ -1,0 +1,64 @@
+{
+  "name": "legaltech-hub-v-2",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi",
+    "lint": "eslint ./src --ext .js"
+  },
+  "devDependencies": {
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
+    "prettier": "^2.8.0"
+  },
+  "dependencies": {
+    "@_sh/strapi-plugin-ckeditor": "^1.1.2",
+    "@opensearch-project/opensearch": "^2.1.0",
+    "@strapi/plugin-content-type-builder": "4.5.3",
+    "@strapi/plugin-email": "4.5.3",
+    "@strapi/plugin-graphql": "4.5.3",
+    "@strapi/plugin-i18n": "4.5.3",
+    "@strapi/plugin-upload": "4.5.3",
+    "@strapi/plugin-users-permissions": "4.5.3",
+    "@strapi/provider-email-sendgrid": "^4.5.3",
+    "@strapi/provider-upload-aws-s3": "^4.5.3",
+    "@strapi/strapi": "4.5.3",
+    "@strapi/utils": "4.5.3",
+    "axios": "^1.2.0",
+    "csv-parser": "^3.0.0",
+    "form-data": "^4.0.0",
+    "knex": "^2.3.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "pg": "^8.8.0",
+    "qs": "^6.11.0",
+    "request": "^2.88.2",
+    "slugify": "^1.6.5",
+    "strapi-provider-upload-aws-s3-custom-domain": "^3.0.0-beta.9",
+    "uuid": "^9.0.0",
+    "validator": "^13.7.0",
+    "xhr2": "^0.2.1"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "48604bcc-d0d0-4cde-8366-b91ed0b7ff19"
+  },
+  "engines": {
+    "node": ">=14.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

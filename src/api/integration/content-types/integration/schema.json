@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "integrations",
+  "info": {
+    "name": "Integration",
+    "singularName": "integration",
+    "pluralName": "integrations",
+    "displayName": "Integration"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

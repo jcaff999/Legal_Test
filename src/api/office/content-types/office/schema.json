@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offices",
+  "info": {
+    "name": "Office",
+    "singularName": "office",
+    "pluralName": "offices",
+    "displayName": "Office"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

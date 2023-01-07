@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_invitations_invitations",
+  "info": {
+    "displayName": "Invitations"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "Pending",
+        "Accepted"
+      ]
+    }
+  }
+}

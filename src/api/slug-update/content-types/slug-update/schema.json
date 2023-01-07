@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "slug_updates",
+  "info": {
+    "singularName": "slug-update",
+    "pluralName": "slug-updates",
+    "displayName": "SlugUpdate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "string"
+    },
+    "oldSlug": {
+      "type": "string"
+    },
+    "newSlug": {
+      "type": "string"
+    }
+  }
+}

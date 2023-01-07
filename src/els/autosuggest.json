@@ -1,0 +1,138 @@
+{
+  "settings": {
+    "max_ngram_diff": 8,
+    "analysis": {
+      "filter": {
+        "english_stop": {
+          "type":       "stop",
+          "stopwords":  "_english_" 
+        },
+        "synonym": {
+          "type": "synonym",
+          "lenient": true,
+          "synonyms" : [
+            "M&A => Mergers & Acquisitions, Mergers and Acquisitions",
+            "DEI => Diversity & Inclusion, Diversity and Inclusion, Diversity, Equity & inclusion, Diversity equity and inclusion",
+            "Document Automation => Contract Automation",
+            "Judicial Analytics => Litigation Analytics",
+            "Data Analytics => Business Intelligence",
+            "ALSP => Alternative Legal Services, Law Company, Law Companies",
+            "CLM => Contract Lifecycle Management, End-to-End CLM",
+            "Contract Review => Data Extraction",
+            "CRM => Client Relationship Management",
+            "IAM => IDAM, Identity Access Management",
+            "Infogov => Information governance",
+            "KYC => Know Your Client",
+            "NBI => New Business Intake, Business Intake, Client Intake",
+            "Risk Management => Security, Information Security, Infosec",
+            "AI => Artificial Intelligence",
+            "ML => Machine Learning",
+            "KM => Knowledge Management",
+            "DM => DMS, Document Management, Document Management System",
+            "IP => Intellectual Property",
+            "TM => Trademark, Trade Mark",
+            "ADR => Alternative Dispute Resolution", 
+            "BOA => Book of Authorities",
+            "Case Management => End-to-End Case Management",
+            "Transaction Management => End-to-End Transaction Management",
+            "RPA => Robotic Process Automation",
+            "VDR => Virtual Data Room",
+            "Bankruptcy => Bankruptcy and Restructuring, Restructuring, Reorganizations, Reorg",
+            "PI => Personal Injury",
+            "Estates => Estate Law, Wills and Probate"
+          ]
+        }
+      },
+      "tokenizer": {
+        "full": {
+          "type": "ngram",
+          "min_gram": 2,
+          "max_gram": 10,
+          "token_chars": ["letter", "digit"]
+        },
+        "taxonomy": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 10,
+          "token_chars": ["letter", "digit"]
+        },
+        "search": {
+          "type": "edge_ngram",
+          "min_gram": 2,
+          "max_gram": 10,
+          "token_chars": ["letter", "digit"]
+        }
+      },
+      "analyzer": {
+        "full": {
+          "tokenizer": "full",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "english_stop",
+            "synonym"
+          ],
+          "char_filter": [
+            "html_strip"
+          ]
+        },
+        "full_search": {
+          "tokenizer": "search",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "english_stop",
+            "synonym"
+          ],
+          "char_filter": [
+            "html_strip"
+          ]
+        },
+        "taxonomy": {
+          "tokenizer": "taxonomy",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "english_stop",
+            "synonym"
+          ],
+          "char_filter": [
+            "html_strip"
+          ]
+        },
+        "taxonomy_search": {
+          "tokenizer": "standard",
+          "filter": [
+            "lowercase",
+            "asciifolding",
+            "english_stop",
+            "synonym"
+          ],
+          "char_filter": [
+            "html_strip"
+          ]
+        }
+      }
+    }
+  },
+  "mappings": {
+    "properties": {
+      "suggestKeyword": {
+        "type": "text",
+        "analyzer": "full",
+        "search_analyzer": "full_search",
+        "fields": {
+          "raw": {
+            "type": "keyword"
+          }
+        }
+      },
+      "type": {
+        "type": "keyword"
+      },
+      "data": {
+        "type": "nested"
+      }
+    }
+  }
+}

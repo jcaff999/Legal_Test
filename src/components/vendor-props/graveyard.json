@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_vendor_props_graveyards",
+  "info": {
+    "name": "Graveyard",
+    "icon": "gift"
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    }
+  }
+}

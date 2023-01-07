@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/terms-conditions",
+      "handler": "terms-conditions.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/terms-conditions",
+      "handler": "terms-conditions.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/terms-conditions",
+      "handler": "terms-conditions.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

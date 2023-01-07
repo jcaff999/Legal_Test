@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "installations",
+  "info": {
+    "name": "Deployment",
+    "singularName": "installation",
+    "pluralName": "installations",
+    "displayName": "Deployment"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

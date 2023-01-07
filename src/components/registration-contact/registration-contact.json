@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_registration_contact_registration_contacts",
+  "info": {
+    "displayName": "Registration Contact"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "jobTitle": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

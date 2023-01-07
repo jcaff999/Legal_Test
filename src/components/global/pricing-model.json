@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_vendor_props_pricing_model",
+  "info": {
+    "name": "Pricing",
+    "icon": "file-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "startPrice": {
+      "type": "integer"
+    },
+    "exampleTypeAccount": {
+      "type": "string"
+    },
+    "pricingModel": {
+      "type": "string"
+    }
+  }
+}
